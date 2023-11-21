@@ -1,12 +1,9 @@
-#[allow(unused_imports)]
-// #[cfg(feature = "allocator-api2")]
 use allocator_api2::alloc::{AllocError, Allocator};
+pub use allocator_api2::vec::Vec;
 use std::{
     alloc::Layout,
     sync::atomic::{AtomicUsize, Ordering::SeqCst},
 };
-// #[cfg(feature = "allocator-api2")]
-pub use allocator_api2::vec::Vec;
 use std::{
     alloc::{GlobalAlloc, System},
     ptr::NonNull,
@@ -50,7 +47,6 @@ pub fn stats() -> Stats {
     }
 }
 
-// #[cfg(feature = "allocator-api2")]
 unsafe impl Allocator for TrackingAllocator {
     fn allocate(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> {
         unsafe {

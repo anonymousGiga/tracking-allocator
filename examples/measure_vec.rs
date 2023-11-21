@@ -6,7 +6,7 @@ use tracking_allocator::{Stats, TrackingAllocator, Vec};
 pub fn test(name: &str, size: usize, allocator: &TrackingAllocator) {
     let mut rng = thread_rng();
     let mut data: [u8; 100] = [0; 100];
-    data.try_fill(&mut rng).expect("filling data should work");
+    data.try_fill(&mut rng).expect("filling data error");
     let val = Data { data };
 
     tracking_allocator::reset();

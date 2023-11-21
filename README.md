@@ -1,1 +1,2 @@
-This repo provide a memory allocator for measuring HasmMap and Vec.
+This repo provide a memory allocator for measuring heap memory size of HashMap and Vec.
+
